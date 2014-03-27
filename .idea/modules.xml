@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tests/lib/slick/Tests.iml" filepath="$PROJECT_DIR$/tests/lib/slick/Tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests/lib/slick/slick.iml" filepath="$PROJECT_DIR$/tests/lib/slick/slick.iml" />
     </modules>
   </component>
 </project>
