@@ -11,6 +11,9 @@ import com.ThreeCheesePasta.world.tileHandler;
 public class worldGenerator {
 	public String[] biomeList = {"Plains",
 	                             "Mountains"};
+	public int[] biomeHeight = {5000,
+								10000};
+	
 	//Assigns biomes to slices
 	public int[] biomesToWorld() {
 		Random random = new Random();
