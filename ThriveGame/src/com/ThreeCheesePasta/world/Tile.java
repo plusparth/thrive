@@ -1,4 +1,4 @@
-package world;
+package com.ThreeCheesePasta.world;
 
 public class Tile {
 	public String displayName = "";

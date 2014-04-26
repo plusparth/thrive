@@ -1,4 +1,4 @@
-package worldGenerator;
+package com.ThreeCheesePasta.worldGenerator;
 
 import java.io.*;
 import java.util.zip.*;
@@ -53,7 +53,7 @@ public class MapXMLFile {
             tileset.setAttribute("tileheight", "48");
             
                Element image = doc.createElement("image");
-               image.setAttribute("source", "tileset.png");
+               image.setAttribute("source", "/images/tileset.png");
                image.setAttribute("width", "384");
                image.setAttribute("height", "192");
                

@@ -1,4 +1,4 @@
-package world;
+package com.ThreeCheesePasta.world;
 
 public class tileHandler {
 	//Create, register tiles
@@ -8,19 +8,19 @@ public class tileHandler {
 	
 	public void setTileProperties() {
 		//Set IDs
-		tileDirt.id = 0;
-		tileGrass.id = 1;
-		tileStone.id = 2;
+		this.tileDirt.id = 0;
+		this.tileGrass.id = 1;
+		this.tileStone.id = 2;
 		
 		//Set display names
-		tileDirt.displayName = "Dirt";
-		tileGrass.displayName = "Grassy Dirt";
-		tileStone.displayName = "Stone";
+		this.tileDirt.displayName = "Dirt";
+		this.tileGrass.displayName = "Grassy Dirt";
+		this.tileStone.displayName = "Stone";
 		
 		//Set tile hardness
-		tileDirt.hardness = 0.01f;
-		tileGrass.hardness = tileDirt.hardness;
-		tileStone.hardness = 0.1f;	
+		this.tileDirt.hardness = 0.01f;
+		this.tileGrass.hardness = tileDirt.hardness;
+		this.tileStone.hardness = 0.1f;	
 	}
 	//TODO: What else does this thing do?
 	//Pass stuff to inventory handler (TODO)
