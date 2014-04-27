@@ -8,10 +8,14 @@ import com.ThreeCheesePasta.world.tileHandler;
 
 
 public class worldGenerator {
-	public String[] biomeList = {"Plains",
+	public static String[] biomeList = {"Plains",
 	                             "Mountains"};
-	public int[] biomeHeight = {5000,
+	public static int[] biomeHeight = {5000,
 								10000};
+	private static int sliceSize = 128;
+	private static int worldDim = sliceSize * sliceSize;
+	
+	public int[][] fullMap = new int[sliceSize][worldDim];
 	
 	//Assigns biomes to slices
 	public int[] biomesToWorld() {
@@ -24,9 +28,6 @@ public class worldGenerator {
 		return biomesInWorld;
 	}
 	
-	private int sliceSize = 128;
-	private int worldDim = sliceSize * sliceSize;
-	public int[][] fullMap = new int[sliceSize][worldDim];
 	//Generates heightmap for stuffs
 	public int[] heightMap(int first, int last, int width, int height, float displace, float roughness) {
 		int power = (int) Math.floor(Math.pow(2,Math.ceil(Math.log(width) / Math.log(2))));
