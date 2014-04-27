@@ -1,6 +1,5 @@
 package com.ThreeCheesePasta.worldGenerator;
 
-import java.math.*;
 import java.util.Random;
 import java.util.Arrays;
 
