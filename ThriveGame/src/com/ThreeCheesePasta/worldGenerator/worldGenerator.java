@@ -9,9 +9,9 @@ import com.ThreeCheesePasta.world.tileHandler;
 
 public class worldGenerator {
 	public static String[] biomeList = {"Plains",
-	                             "Mountains"};
+	                             		"Mountains"};
 	public static int[] biomeHeight = {5000,
-								10000};
+									   10000};
 	private static int sliceSize = 128;
 	private static int worldDim = sliceSize * sliceSize;
 	
