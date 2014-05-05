@@ -1,6 +1,6 @@
 package com.ThreeCheesePasta.world;
 
-public class tileHandler {
+public class TileHandler {
 	//Create, register tiles
 	public Tile tileDirt = new Tile();
 	public Tile tileGrass = new Tile();

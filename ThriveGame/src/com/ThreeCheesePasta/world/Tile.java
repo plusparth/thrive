@@ -1,5 +1,8 @@
 package com.ThreeCheesePasta.world;
 
+
+//Size: 1 tilelength = 1/4 meter
+
 public class Tile {
 	public String displayName = "";
 	public String pathToTexture = "";
