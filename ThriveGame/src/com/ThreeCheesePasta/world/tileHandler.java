@@ -7,10 +7,6 @@ public class tileHandler {
 	public Tile tileStone = new Tile();
 	
 	public void setTileProperties() {
-		//Set IDs
-		this.tileDirt.id = 0;
-		this.tileGrass.id = 1;
-		this.tileStone.id = 2;
 		
 		//Set display names
 		this.tileDirt.displayName = "Dirt";
@@ -25,4 +21,5 @@ public class tileHandler {
 	//TODO: What else does this thing do?
 	//Pass stuff to inventory handler (TODO)
 	//Handle special tiles (crafting table etc)
+	
 }

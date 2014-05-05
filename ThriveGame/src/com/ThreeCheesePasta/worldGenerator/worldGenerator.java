@@ -15,13 +15,13 @@ public class worldGenerator {
 	private static int sliceSize = 128;
 	private static int worldDim = sliceSize * sliceSize;
 	
-	public int[][] fullMap = new int[sliceSize][worldDim];
+	public int[][][] fullMap = new int[sliceSize][sliceSize][worldDim];
 	
 	//Assigns biomes to slices
 	public int[] biomesToWorld() {
 		Random random = new Random();
 		int[] biomesInWorld = new int[1024];
-		int numberOfBiomes = this.biomeList.length;
+		int numberOfBiomes = worldGenerator.biomeList.length;
 		for(int i = 0; i < 1024; i++) {
 			biomesInWorld[i] = random.nextInt(numberOfBiomes);
 		}
