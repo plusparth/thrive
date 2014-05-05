@@ -4,24 +4,26 @@ import java.util.Random;
 import java.util.Arrays;
 
 import com.ThreeCheesePasta.world.Tile;
-import com.ThreeCheesePasta.world.tileHandler;
+import com.ThreeCheesePasta.world.TileHandler;
 
 
 public class worldGenerator {
+	private TileHandler tiles = new TileHandler();
+	
 	public static String[] biomeList = {"Plains",
-	                             "Mountains"};
+	                             		"Mountains"};
 	public static int[] biomeHeight = {5000,
-								10000};
+									   10000};
 	private static int sliceSize = 128;
 	private static int worldDim = sliceSize * sliceSize;
 	
-	public int[][] fullMap = new int[sliceSize][worldDim];
+	public Tile[][][] fullMap = new Tile[sliceSize][sliceSize][worldDim];
 	
 	//Assigns biomes to slices
 	public int[] biomesToWorld() {
 		Random random = new Random();
 		int[] biomesInWorld = new int[1024];
-		int numberOfBiomes = this.biomeList.length;
+		int numberOfBiomes = worldGenerator.biomeList.length;
 		for(int i = 0; i < 1024; i++) {
 			biomesInWorld[i] = random.nextInt(numberOfBiomes);
 		}
@@ -53,11 +55,13 @@ public class worldGenerator {
 	}
 	
 	//Combines arrays into the 2d thing
-	public int[][] addToArray(int[][] originalArray, int[] adder, int numOfSlice) {
-		for(int i = 0; i < adder.length; i++) {
-			originalArray[i][numOfSlice] = adder[i];
+	public Tile[][][] addToArray(Tile[][][] originalArray, int[] sliceHeight, int numOfSlice) {
+		//Creates full array map
+		for(int i = 0; i < sliceHeight.length; i++) { //Loops through entire slice to add dirt to thing
+			originalArray[i][sliceHeight[i]][numOfSlice] = tiles.tileDirt;
 		}
 		return originalArray;
 	}
+	
 	
 }
