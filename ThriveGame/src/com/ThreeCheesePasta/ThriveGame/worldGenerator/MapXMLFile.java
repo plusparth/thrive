@@ -1,4 +1,4 @@
-package com.ThreeCheesePasta.worldGenerator;
+package com.ThreeCheesePasta.ThriveGame.worldGenerator;
 
 import java.io.*;
 import java.util.zip.*;

@@ -1,4 +1,4 @@
-package com.ThreeCheesePasta.world;
+package com.ThreeCheesePasta.ThriveGame.world;
 
 public class TileHandler {
 	//Create, register tiles
@@ -17,7 +17,13 @@ public class TileHandler {
 		this.tileDirt.hardness = 0.01f;
 		this.tileGrass.hardness = tileDirt.hardness;
 		this.tileStone.hardness = 0.1f;	
+		
+		this.tileDirt.id = 0;
+		this.tileGrass.id = 1;
+		this.tileStone.id = 2;
 	}
+	
+	
 	//TODO: What else does this thing do?
 	//Pass stuff to inventory handler (TODO)
 	//Handle special tiles (crafting table etc)
