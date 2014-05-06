@@ -1,4 +1,4 @@
-package com.ThreeCheesePasta.world;
+package com.ThreeCheesePasta.ThriveGame.world;
 
 
 //Size: 1 tilelength = 1/4 meter

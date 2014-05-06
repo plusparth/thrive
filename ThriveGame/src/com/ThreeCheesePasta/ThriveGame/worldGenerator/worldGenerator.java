@@ -1,10 +1,10 @@
-package com.ThreeCheesePasta.worldGenerator;
+package com.ThreeCheesePasta.ThriveGame.worldGenerator;
 
 import java.util.Random;
 import java.util.Arrays;
 
-import com.ThreeCheesePasta.world.Tile;
-import com.ThreeCheesePasta.world.TileHandler;
+import com.ThreeCheesePasta.ThriveGame.world.Tile;
+import com.ThreeCheesePasta.ThriveGame.world.TileHandler;
 
 
 public class worldGenerator {
