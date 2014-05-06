@@ -9,10 +9,9 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
+import com.ThreeCheesePasta.ThriveGame.render.Renderer;
 
 public class ThriveGame extends BasicGame {
-	
-	
 	TrueTypeFont font;
 	
 	public ThriveGame(String gamename) {
@@ -25,14 +24,14 @@ public class ThriveGame extends BasicGame {
 		font = new TrueTypeFont(Consolas, false);
 		Logger.getLogger(ThriveGame.class.getName()).log(Level.INFO, "Font set.");
 	}
-
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {
 	}
 
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		//g.setFont(font);
+		g.setFont(font);
+		//Renderer.fullRender(g, );
 		g.drawString("Basic rendering test", 100, 100);
 	}
 	
