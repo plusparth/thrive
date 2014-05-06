@@ -2,16 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/commons-codec-1.6.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/lwjgl-2.9.1/lwjgl-2.9.1/jar/jinput.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/slick/lib/jogg-0.0.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/slick/lib/jorbis-0.0.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/slick/lib/slick.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/lwjgl-2.9.1/lwjgl-2.9.1/jar/lwjgl_util.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/plato2000/thrive/lwjgl-2.9.1/lwjgl-2.9.1/jar/lwjgl.jar">
+	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/slick/lib/slick.jar"/>
+	<classpathentry kind="lib" path="lib/lwjgl-2.9.1/jar/jinput.jar"/>
+	<classpathentry kind="lib" path="lib/lwjgl-2.9.1/jar/lwjgl.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/plato2000/thrive/lwjgl-2.9.1/lwjgl-2.9.1/native/macosx"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="ThriveGame/lib/lwjgl-2.9.1/native/macosx"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/lwjgl-2.9.1/jar/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="lib/slick/lib/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/slick/lib/jorbis-0.0.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
