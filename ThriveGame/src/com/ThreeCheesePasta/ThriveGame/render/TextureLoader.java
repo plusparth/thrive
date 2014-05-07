@@ -7,14 +7,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TextureLoader {
-	private static String IMG_PATH = "images";
+	private static String IMG_PATH = "images/";
 	
 	private static Image[] tiles = new Image[3];
 	
 	public static void loadTiles() {
 		try {
             SpriteSheet sheet = new SpriteSheet(IMG_PATH + "tileset.png", 48, 48);
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 3; i++)
             {
                 tiles[i] = sheet.getSubImage(i, 0);
             }

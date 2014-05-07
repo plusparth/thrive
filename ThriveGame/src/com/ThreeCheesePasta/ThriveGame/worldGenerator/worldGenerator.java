@@ -7,8 +7,8 @@ import com.ThreeCheesePasta.ThriveGame.world.Tile;
 import com.ThreeCheesePasta.ThriveGame.world.TileHandler;
 
 
-public class worldGenerator {
-	private TileHandler tiles = new TileHandler();
+public class WorldGenerator {
+	public TileHandler tiles = new TileHandler();
 	
 	public static String[] biomeList = {"Plains",
 	                             		"Mountains"};
@@ -23,7 +23,7 @@ public class worldGenerator {
 	public int[] biomesToWorld() {
 		Random random = new Random();
 		int[] biomesInWorld = new int[1024];
-		int numberOfBiomes = worldGenerator.biomeList.length;
+		int numberOfBiomes = WorldGenerator.biomeList.length;
 		for(int i = 0; i < 1024; i++) {
 			biomesInWorld[i] = random.nextInt(numberOfBiomes);
 		}
@@ -61,6 +61,26 @@ public class worldGenerator {
 			originalArray[i][sliceHeight[i]][numOfSlice] = tiles.tileDirt;
 		}
 		return originalArray;
+	}
+	
+	//FOR TESTING PURPOSES ONLY
+	public static Tile[][] generateFlatMap(TileHandler tileHand) {
+		Tile[][] thing = new Tile[1024][1024];
+		for(int x = 0; x < thing.length; x++) {
+			for(int y = 0; y < thing[0].length; y++) {
+				if(y == 1010) {
+					thing[x][y] = tileHand.tileGrass;
+				}
+				else if(y > 1000) {
+					thing[x][y] = tileHand.tileDirt;
+				}
+				else {
+					thing[x][y] = tileHand.tileStone;
+				}
+			}
+		}
+		
+		return thing;
 	}
 	
 	

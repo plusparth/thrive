@@ -10,6 +10,8 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
 import com.ThreeCheesePasta.ThriveGame.render.Renderer;
+import com.ThreeCheesePasta.ThriveGame.worldGenerator.WorldGenerator;
+import com.ThreeCheesePasta.ThriveGame.world.TileHandler;
 
 public class ThriveGame extends BasicGame {
 	TrueTypeFont font;
@@ -31,8 +33,8 @@ public class ThriveGame extends BasicGame {
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		g.setFont(font);
-		//Renderer.fullRender(g, );
-		g.drawString("Basic rendering test", 100, 100);
+		Renderer.fullRender(g, WorldGenerator.generateFlatMap(new TileHandler()));
+		//g.drawString("Basic rendering test", 100, 100);
 	}
 	
 	public static void main(String[] args) {

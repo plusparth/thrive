@@ -25,6 +25,8 @@ public class Renderer {
 			ypos = 0;
 			xpos += 48;
 		}
+		xpos = 0;
+		//TextureLoader.getTileImage(2).draw(0,0);
 		return g;
 	}
 
