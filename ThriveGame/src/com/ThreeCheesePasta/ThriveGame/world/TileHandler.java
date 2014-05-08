@@ -18,9 +18,9 @@ public class TileHandler {
 		this.tileGrass.hardness = tileDirt.hardness;
 		this.tileStone.hardness = 0.1f;	
 		
-		this.tileDirt.id = 1;
-		this.tileGrass.id = 2;
-		this.tileStone.id = 0;
+		this.tileDirt.id = 0;
+		this.tileGrass.id = 1;
+		this.tileStone.id = 3;
 	}
 	
 	

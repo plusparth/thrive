@@ -3,8 +3,12 @@ package com.ThreeCheesePasta.ThriveGame.worldGenerator;
 import java.util.Random;
 import java.util.Arrays;
 
+import com.ThreeCheesePasta.ThriveGame.ThriveGame;
 import com.ThreeCheesePasta.ThriveGame.world.Tile;
 import com.ThreeCheesePasta.ThriveGame.world.TileHandler;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class WorldGenerator {
@@ -71,15 +75,23 @@ public class WorldGenerator {
 				if(y == 1010) {
 					thing[x][y] = tileHand.tileGrass;
 				}
-				else if(y > 1000) {
+				else if((y < 1010) && (y > 1005)) {
 					thing[x][y] = tileHand.tileDirt;
 				}
-				else {
+				else if (y <= 1005){
 					thing[x][y] = tileHand.tileStone;
 				}
 			}
 		}
-		
+		//Logger.getLogger(WorldGenerator.class.getName()).log(Level.INFO, thing[0][1023].displayName);
+		/*for(int y = 0; y < thing[0].length; y++) {
+			for(int x = 0; x < thing.length; x++) {
+				System.out.print(Integer.toString(thing[x][y].id));
+			}
+			System.out.println();
+		}
+		*/
+		Logger.getLogger(WorldGenerator.class.getName()).log(Level.INFO, "World generated");
 		return thing;
 	}
 	
