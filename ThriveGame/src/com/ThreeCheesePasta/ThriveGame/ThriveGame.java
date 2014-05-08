@@ -26,13 +26,15 @@ public class ThriveGame extends BasicGame {
 	TrueTypeFont font;
 	TileHandler tiles = new TileHandler();
 	
-	Tile[][] map = new Tile[1025][1025];
+	int[] heightMap = new int[16400];
+	Tile[][] map = new Tile[4112][4112];
 	
-	float playerX = 512;
-	float playerY = 50;
+	float playerX = 100;
+	float playerY = 2000;
 	float playerSpeed = 0;
 	int lastKey = 0;
-	static float speedLim = 0.25f;
+	float scale = 1.0f;
+	static float speedLim = 0.1f;
 	
 	public ThriveGame(String gamename) {
 		super(gamename);
@@ -47,7 +49,9 @@ public class ThriveGame extends BasicGame {
 		tiles.setTileProperties();
 		TextureLoader.loadTiles();
 		//Map stuffs
-		map = WorldGenerator.mapGen(MidPoint.getMidPoints(10, 0.9, 0.6), tiles);
+		heightMap = WorldGenerator.heightMap();
+		map = WorldGenerator.mapGen(heightMap, tiles);
+		playerY = heightMap[(int) playerX];
 		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 x length: " + Integer.toString(map.length));
 		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 y length: " + Integer.toString(map[0].length));
 		//Leave as last line
@@ -85,11 +89,11 @@ public class ThriveGame extends BasicGame {
 
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		Renderer.render(g, map, gc.getWidth(), gc.getHeight(), playerX, playerY);
+		Renderer.render(g, map, gc.getWidth(), gc.getHeight(), playerX, playerY, scale);
 		
 		//Logger.getLogger(ThriveGame.class.getName()).log(Level.INFO, "Full render complete.");
-		g.drawString("X: " + Float.toString(playerX), 0, 500);
-		g.drawString("Y: " + Float.toString(playerY), 0, 550);
+		g.drawString("X: " + Float.toString(playerX), 0, 300);
+		g.drawString("Y: " + Float.toString(playerY), 0, 350);
 		g.drawString(Debugger.sysInfo(), 0, 32);
 		
 	}
@@ -100,7 +104,7 @@ public class ThriveGame extends BasicGame {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new ThriveGame("Thrive - Prealpha Development Test 1"));
 			appgc.setVSync(true);
-			appgc.setDisplayMode(1920, 1080, false); //Width, height, fullscreen
+			appgc.setDisplayMode(620, 480, false); //Width, height, fullscreen
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(ThriveGame.class.getName()).log(Level.SEVERE, null, ex);
