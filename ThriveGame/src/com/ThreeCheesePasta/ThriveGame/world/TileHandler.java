@@ -20,7 +20,7 @@ public class TileHandler {
 		
 		this.tileDirt.id = 0;
 		this.tileGrass.id = 1;
-		this.tileStone.id = 2;
+		this.tileStone.id = 3;
 	}
 	
 	
