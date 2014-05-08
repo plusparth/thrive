@@ -13,28 +13,35 @@ import com.ThreeCheesePasta.ThriveGame.render.TextureLoader;
 
 public class Renderer {
 	
-	public static void fullRender(Tile[][] slice1/*, Tile[][] slice2, Tile[][] slice3*/) throws SlickException {
-		
+	public static Graphics render(Graphics g, Tile[][] map, int width, int height, float x, float y) throws SlickException {		
 		int tilePix = 32;		
 		int xpos = 0;
 		int ypos = 0;
-		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 x length: " + Integer.toString(slice1.length));
-		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 y length: " + Integer.toString(slice1[0].length));
-		//Loops through array
 		
-		for(int i = 0; i < slice1.length; i++) {
-			for(int j = slice1[0].length - 1; j >= 0; j--) {
-				if(slice1[i][j] != null) {
-					TextureLoader.getTileImage(slice1[i][j].id).draw(xpos, ypos);
+		//Find max and min x and y
+		float widthTiles = width / 32;
+		float heightTiles = height / 32;
+		float spaceWidth = widthTiles / 2;
+		float spaceHeight = heightTiles / 2;
+		
+		//Loops through array		
+		for(int i = (int) (x - spaceWidth); i < x + spaceWidth; i++) {
+			if((i < 0) || (i >= map.length)) break;
+			for(int j = (int) (y + spaceHeight + 1); j >= y - spaceHeight - 1; j--) {
+				if((j < 0) || (j >= map[0].length)) continue;
+				if(map[i][j] != null) {
+					g.drawImage(TextureLoader.getTileImage(map[i][j].id), xpos, ypos);
 				}
 				ypos += tilePix;
 			}
 			ypos = 0;
 			xpos += tilePix;
+			
 		}
 		
 		xpos = 0;
 		//TextureLoader.getTileImage(2).draw(0,0);
+		return g;
 	}
 
 	
