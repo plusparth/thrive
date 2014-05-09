@@ -68,16 +68,16 @@ public class WorldGenerator {
 				rangeMax = 0;
 				slopeDec = 0;
 				startHeightMin = 2000;
-				startHeightRange = 10;
+				startHeightRange = 20;
 			}
 			
 			else if (biomeNum == 1) {
 				rangeMin = -1;
-				rangeMaxFl = 21;
-				rangeMax = 21;
-				slopeDec = 11f;
+				rangeMaxFl = 84;
+				rangeMax = 84;
+				slopeDec = 42f;
 				startHeightMin = 2100;
-				startHeightRange = 7;
+				startHeightRange = 32;
 			}
 			
 			//Generates starting point for first slice
@@ -105,11 +105,11 @@ public class WorldGenerator {
 					heightMap[h][index] = (int) Math.ceil((heightMap[h][index + (int)Math.pow(2, i - 1)] + heightMap[h][index - (int)Math.pow(2, i - 1)]) / 2);
 					//Special Generation for grasslands, makes zero variation more common than -1 or 1
 					if (biomeNum == 0) {
-						int randomNum = rand.nextInt(11);
+						int randomNum = rand.nextInt(21);
 						if (randomNum == 0) {
 							heightMap[h][index] -= 1;
 						}
-						if (randomNum == 10) {
+						if (randomNum == 20) {
 							heightMap[h][index] += 1;
 						}
 					}
