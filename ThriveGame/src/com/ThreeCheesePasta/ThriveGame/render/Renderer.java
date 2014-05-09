@@ -16,31 +16,36 @@ public class Renderer {
 	public static Graphics render(Graphics g, Tile[][] map, int width, int height, float x, float y, float scale) throws SlickException {		
 		int tilePix = 32;
 		tilePix *= scale;
-		int xpos = (int) (-1 * (Math.round(x) % tilePix));
-		int ypos = (int) (-1 * (Math.round(y) % tilePix));
 		
 		//Find max and min x and y
 		float widthTiles = width / tilePix;
 		float heightTiles = height / tilePix;
 		float spaceWidth = widthTiles / 2;
 		float spaceHeight = heightTiles / 2;
+		float xTiles = x / tilePix;
+		float yTiles = y / tilePix;
+		//Logger.getLogger(Renderer.class.getName()).log(Level.INFO, Float.toString(widthTiles)); //21
+		//Logger.getLogger(Renderer.class.getName()).log(Level.INFO, Float.toString(heightTiles)); //13
 		
 		//Loops through array		
-		for(int i = (int) Math.floor(x - spaceWidth - 7); i < x + spaceWidth + 7; i++) {
+		for(int i = (int) x; i < xTiles; i++) {
 			if((i < 0) || (i >= map.length)) break;
-			for(int j = (int) Math.floor((y + spaceHeight + 7)); j >= y - spaceHeight - 7; j--) {
+			int xpos = (int) ((i * tilePix) - x);
+			if ((xpos > width)) continue;
+			if((xpos < -50)) continue;
+			for(int j = (int) yTiles; j >= y; j--) {
+				System.out.println(Integer.toString(j));
 				if((j < 0) || (j >= map[0].length)) continue;
+				int ypos = (int) ((j * tilePix) - y);
+				if ((xpos > width) || (ypos > height)) continue;
+				if((xpos < -50) || (ypos < -50)) continue;
+				System.out.println("Tile rendered at " + Integer.toString(xpos) + " " + Integer.toString(ypos));
 				if(map[i][j] != null) {
 					TextureLoader.getTileImage(map[i][j].id).draw(xpos, ypos, scale);
 				}
-				ypos += tilePix;
 			}
-			ypos = (int) (-1 * (Math.round(y) % tilePix));
-			xpos += tilePix;
 			
 		}
-		
-		xpos = (int) (-1 * (x % tilePix));
 		//TextureLoader.getTileImage(2).draw(0,0);
 		return g;
 	}

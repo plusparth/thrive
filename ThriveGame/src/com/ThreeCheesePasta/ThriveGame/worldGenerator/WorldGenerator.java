@@ -151,7 +151,7 @@ public class WorldGenerator {
 				if(j >= map[0].length) j = map[0].length - 1;
 			}
 			c++;
-			System.out.println("One iteration complete.");
+			System.out.println(Integer.toString(c) + " iteration complete.");
 		}
 		return map;
 	}

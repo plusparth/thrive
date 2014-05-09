@@ -51,6 +51,7 @@ public class ThriveGame extends BasicGame {
 		//Map stuffs
 		heightMap = WorldGenerator.heightMap();
 		map = WorldGenerator.mapGen(heightMap, tiles);
+		//map = WorldGenerator.generateFlatMap(tiles);
 		playerY = heightMap[(int) playerX];
 		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 x length: " + Integer.toString(map.length));
 		Logger.getLogger(Renderer.class.getName()).log(Level.INFO, "Slice1 y length: " + Integer.toString(map[0].length));
@@ -90,7 +91,6 @@ public class ThriveGame extends BasicGame {
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
 		Renderer.render(g, map, gc.getWidth(), gc.getHeight(), playerX, playerY, scale);
-		
 		//Logger.getLogger(ThriveGame.class.getName()).log(Level.INFO, "Full render complete.");
 		g.drawString("X: " + Float.toString(playerX), 0, 300);
 		g.drawString("Y: " + Float.toString(playerY), 0, 350);
@@ -104,7 +104,7 @@ public class ThriveGame extends BasicGame {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new ThriveGame("Thrive - Prealpha Development Test 1"));
 			appgc.setVSync(true);
-			appgc.setDisplayMode(620, 480, false); //Width, height, fullscreen
+			appgc.setDisplayMode(680, 420, false); //Width, height, fullscreen
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(ThriveGame.class.getName()).log(Level.SEVERE, null, ex);
