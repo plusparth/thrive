@@ -31,10 +31,10 @@ public class ThriveGame extends BasicGame {
 	
 	float playerX = 100;
 	float playerY = 2000;
-	float playerSpeed = 0;
+	float playerSpeed = 1;
 	int lastKey = 0;
-	float scale = 1.0f;
-	static float speedLim = 0.1f;
+	float scale = 0.25f;
+	static float speedLim = 2.0f;
 	
 	public ThriveGame(String gamename) {
 		super(gamename);
