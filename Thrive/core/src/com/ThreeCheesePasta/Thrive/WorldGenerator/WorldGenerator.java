@@ -1,6 +1,8 @@
 package com.ThreeCheesePasta.Thrive.WorldGenerator;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.ThreeCheesePasta.Thrive.utils.Utils;
 import com.ThreeCheesePasta.Thrive.World.Tile;
@@ -103,9 +105,12 @@ public class WorldGenerator {
 	
 	//Generates map of Tiles from height map
 	public static Tile[][] mapGen(int[] heightMap, TileHandler tiles) {
+		//Init of map
 		Tile[][] map = new Tile[heightMap.length][heightMap.length];
+		//Counter to go through heightMap
 		int c = 0;
 		for(int x : heightMap) {
+			//DEBUGGING
 			System.out.println(x);
 			int intx = x;
 			if(intx < 10) intx = 10;
@@ -125,5 +130,27 @@ public class WorldGenerator {
 			System.out.println(Integer.toString(c) + " iteration complete.");
 		}
 		return map;
+	}
+	
+	//FOR TESTING PURPOSES ONLY
+	public static Tile[][] generateFlatMap(TileHandler tileHand) {
+		Tile[][] thing = new Tile[1025][1025];
+		for(int x = 0; x < thing.length; x++) {
+			for(int y = 0; y < thing[0].length; y++) {
+				if(y == 1010) {
+					thing[x][y] = tileHand.tileGrass;
+				}
+				else if(y < 1010) {
+					if(y % 2 == 0) {
+						thing[x][y] = tileHand.tileDirt;
+					}
+					else {
+						thing[x][y] = tileHand.tileStone;
+					}
+				}
+			}
+		}
+		Logger.getLogger(WorldGenerator.class.getName()).log(Level.INFO, "World generated");
+		return thing;
 	}
 }

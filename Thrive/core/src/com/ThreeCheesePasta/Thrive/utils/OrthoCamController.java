@@ -31,4 +31,10 @@ public class OrthoCamController extends InputAdapter {
 		last.set(-1, -1, -1);
 		return false;
 	}
+	
+	@Override
+	public boolean scrolled (int amount) {
+		camera.zoom += 0.1 * amount;
+		return true;
+	}
 }
