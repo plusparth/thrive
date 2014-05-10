@@ -20,7 +20,7 @@ import com.ThreeCheesePasta.Thrive.utils.OrthoCamController;
 
 public class ThriveGame extends ApplicationAdapter {
 	private SpriteBatch batch;
-	private TiledMap map;
+	private TiledMap renderMap;
 	private TiledMapRenderer renderer;
 	private OrthographicCamera camera;
 	private OrthoCamController cameraController;
@@ -28,6 +28,7 @@ public class ThriveGame extends ApplicationAdapter {
 	private Texture tiles;
 	private Texture texture;
 	private BitmapFont font;
+	private int[][] map = new int[4112][4112];
 	
 	@Override
 	public void create () {
@@ -43,14 +44,16 @@ public class ThriveGame extends ApplicationAdapter {
 
 		font = new BitmapFont();
 		batch = new SpriteBatch();
+		
+		
 
 		{
 			tiles = new Texture(Gdx.files.internal("assets/textures/tileSheet.png"));
 			TextureRegion[][] splitTiles = TextureRegion.split(tiles, 32, 32);
-			map = new TiledMap();
-			MapLayers layers = map.getLayers();
+			renderMap = new TiledMap();
+			MapLayers layers = renderMap.getLayers();
 			for (int l = 0; l < 20; l++) {
-				TiledMapTileLayer layer = new TiledMapTileLayer(1025, 1025, 32, 32);
+				TiledMapTileLayer layer = new TiledMapTileLayer(4112, 4112, 32, 32);
 				for (int x = 0; x < 1025; x++) {
 					for (int y = 0; y < 1025; y++) {
 						int ty = (int)(Math.random() * splitTiles.length);
@@ -63,7 +66,7 @@ public class ThriveGame extends ApplicationAdapter {
 				layers.add(layer);
 			}
 		}
-		renderer = new OrthogonalTiledMapRenderer(map);
+		renderer = new OrthogonalTiledMapRenderer(renderMap);
 	}
 
 	@Override
