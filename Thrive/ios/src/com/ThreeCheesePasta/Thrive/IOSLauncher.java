@@ -1,11 +1,11 @@
-package com.ThreeCheesePasta.Thrive;
+package com.ThreeCheesePasta.thrive;
 
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import com.ThreeCheesePasta.Thrive.ThriveGame;
+import com.ThreeCheesePasta.thrive.ThriveGame;
 
 public class IOSLauncher extends IOSApplication.Delegate {
     @Override
